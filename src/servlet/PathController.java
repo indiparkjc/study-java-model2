@@ -7,32 +7,35 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class UserServlet extends HttpServlet {
+public class PathController extends HttpServlet {
 
     @Override
     public void init(ServletConfig config) throws ServletException {
-        System.out.println("[요청] UserServlet 객체 생성");
+        System.out.println("[요청] CommandServlet 객체 생성");
     }
 
-//    @Override
-//    public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
-//        super.service(req, res);
-//    }
+    public void proccess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+        System.out.println("::::::::: CommandServlet 요청 처리 시작 :::::::::::");
+        req.setCharacterEncoding("UTF-8");
+//        resp.setContentType("text/html;charset=utf-8");
+    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("GET 호출!");
+        System.out.println("CommandServlet GET 호출!");
+        proccess(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("POST 호출!");
+        System.out.println("CommandServlet POST 호출!");
+        proccess(request, response);
     }
 
     @Override
     public void destroy() {
-        System.out.println("[종료] UserServlet 객체 제거");
+        System.out.println("[종료] CommandServlet 객체 제거");
     }
 }

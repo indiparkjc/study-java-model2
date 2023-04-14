@@ -21,13 +21,13 @@ public class TestServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("GET 호출!");
+        System.out.println("TestServlet GET 호출!");
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("POST 호출!");
+        System.out.println("TestServlet POST 호출!");
     }
 
     @Override
